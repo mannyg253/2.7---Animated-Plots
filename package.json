@@ -1,0 +1,6 @@
+{
+  "scripts": {
+    "test": "node --check script.js"
+  },
+  "devDependencies": {}
+}

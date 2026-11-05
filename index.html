@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bridge of Creations</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell" aria-labelledby="page-title">
+      <section class="hero-panel">
+        <p class="eyebrow">Animated personal atlas</p>
+        <h1 id="page-title">A bridge from you to everything you’ve created.</h1>
+        <p class="hero-copy">
+          Follow each glowing span from the center outward: ideas, projects, rituals,
+          relationships, experiments, and every artifact that carries your signature.
+        </p>
+        <div class="legend" aria-label="Bridge categories">
+          <span><i class="dot dot-projects"></i>Projects</span>
+          <span><i class="dot dot-stories"></i>Stories</span>
+          <span><i class="dot dot-tools"></i>Tools</span>
+          <span><i class="dot dot-impact"></i>Impact</span>
+        </div>
+      </section>
+
+      <section class="bridge-card" aria-label="Animated bridge visualization">
+        <svg id="bridge-map" viewBox="0 0 1200 720" role="img" aria-labelledby="bridge-title bridge-desc">
+          <title id="bridge-title">Animated bridge connecting the creator to their creations</title>
+          <desc id="bridge-desc">
+            A central node labeled Me connects with animated bridge lines to a constellation of creations.
+          </desc>
+          <defs>
+            <filter id="soft-glow" x="-30%" y="-30%" width="160%" height="160%">
+              <feGaussianBlur stdDeviation="6" result="blur" />
+              <feMerge>
+                <feMergeNode in="blur" />
+                <feMergeNode in="SourceGraphic" />
+              </feMerge>
+            </filter>
+            <linearGradient id="bridge-gradient" x1="0%" x2="100%" y1="0%" y2="0%">
+              <stop offset="0%" stop-color="#64f4d7" />
+              <stop offset="50%" stop-color="#9f8cff" />
+              <stop offset="100%" stop-color="#ff9ac8" />
+            </linearGradient>
+          </defs>
+          <g class="stars" aria-hidden="true"></g>
+          <g class="bridge-lines"></g>
+          <g class="creation-nodes"></g>
+          <g class="center-node" transform="translate(600 360)">
+            <circle class="center-pulse" r="92"></circle>
+            <circle class="center-orb" r="70"></circle>
+            <text class="center-label" y="8">Me</text>
+          </g>
+        </svg>
+        <aside class="creation-panel" aria-live="polite">
+          <p class="panel-kicker">Current span</p>
+          <h2 id="creation-name">Choose a creation</h2>
+          <p id="creation-detail">
+            Hover or focus a node to see how that creation connects back to you.
+          </p>
+        </aside>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
